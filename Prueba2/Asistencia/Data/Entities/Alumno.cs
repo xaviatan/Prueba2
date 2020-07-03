@@ -5,7 +5,10 @@
     public class Alumno
     {
         public int id { set; get; }
-        public int Nombre { set; get; }
+
+        [MaxLength(50,ErrorMessage="Solo debe contener (0) hasta (1) caracteres")]
+        [Required]
+        public string Nombre { set; get; }
         [Display(Name = "Cedula de identidad")]
         public int CI { set; get; }
         [Display(Name = "Foto")]
@@ -15,7 +18,7 @@
         [Display(Name = "Telefono")]
         public string Fono { set; get; }
         [Display(Name = "Fecha de Nacimiento")]
-        public DateTime FechaNaci { set; get; }
+        public DateTime? FechaNaci { set; get; }
         [Display(Name = "Curso")]
         public string Curso { set; get; }
     }

@@ -4,14 +4,16 @@ using Asistencia.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Asistencia.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200703235158_ModifyAlumno")]
+    partial class ModifyAlumno
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,8 +39,7 @@ namespace Asistencia.Migrations
 
                     b.Property<string>("ImageURL");
 
-                    b.Property<string>("Nombre")
-                        .IsRequired()
+                    b.Property<int>("Nombre")
                         .HasMaxLength(50);
 
                     b.HasKey("id");
